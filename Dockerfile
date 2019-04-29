@@ -1,4 +1,4 @@
-FROM ubuntu:19.04
+FROM ubuntu:18.04
 MAINTAINER Pavel Tatashin
 
 # http://www.yoctoproject.org/docs/current/ref-manual/ref-manual.html
@@ -13,7 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update -y --no-install-recommends \
    desktop-file-utils libgl1-mesa-dev libglu1-mesa-dev mercurial autoconf \
    automake groff curl lzop asciidoc u-boot-tools ssh sudo file libssl-dev \
    libncurses-dev bison flex rsync imagemagick python-wand libmagickwand-dev \
-   libunwind8 libunwind8-dev libffi-dev python-dev
+   libunwind8 libunwind8-dev libffi-dev python-dev software-properties-common
 
 # Set the locale, else yocto will complain
 RUN locale-gen en_US.UTF-8
