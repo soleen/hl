@@ -28,7 +28,7 @@ First time to use the `hl` command, you need to tell it where is the workdir.
 For example:
 
 ```sh
-hl --workdir /home/soleen/hl
+hl --workdir /home/soleen/highlands
 ```
 
 After this command, we'll create a container named `hl`, which is the environment we used to work.
