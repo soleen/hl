@@ -76,10 +76,10 @@ Description:
     The first time you run this script, you should specify yor
     project directory like following:
 
-        $0 --workdir /home/soleen/hl
+        $0 --workdir /home/soleen/highlands
 
     This script will help you to pull the docker image and mount
-    the /home/soleen/hl to container's /hl directory
+    the /home/soleen/highlands to container's /highlands directory
 
     If you want to attach current running shell, you can use:
 
@@ -178,7 +178,7 @@ do
             INFO "Creating container $CONTAINER"
             USER=$(whoami)
             docker run -it \
-                   --volume="$WORKDIR:/hl" \
+                   --volume="$WORKDIR:/highlands" \
                    --volume="${HOME}/.ssh:/home/${USER}/.ssh" \
                    --volume="${HOME}/.gitconfig:/home/${USER}/.gitconfig" \
                    --volume="${HOME}/.vimrc:/home/${USER}/.vimrc" \
