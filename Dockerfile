@@ -55,13 +55,14 @@ RUN ln -s /usr/bin/ld.lld-7 /usr/bin/ld.lld
 RUN update-alternatives --install /usr/bin/cc cc /usr/bin/clang 100
 RUN update-alternatives --install /usr/bin/c++ c++ /usr/bin/clang++ 100
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-pip
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y python-pip unixodbc unixodbc-dev
 RUN pip install pyodbc
 RUN pip install psutil
 
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-RUN curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/$VERSION/prod.list
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && sudo apt-get install -y powershell
+RUN curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y powershell
 
 COPY ./entrypoint /entrypoint
 RUN chmod +x /entrypoint
