@@ -40,7 +40,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y mono-devel
 
 RUN curl -o /tmp/cmake-3.14.2-Linux-x86_64.sh -O https://cmake.org/files/v3.14/cmake-3.14.2-Linux-x86_64.sh
-RUN chmod +x ./cmake-3.14.2-Linux-x86_64.sh
+RUN chmod +x /tmp/cmake-3.14.2-Linux-x86_64.sh
 RUN /tmp/cmake-3.14.2-Linux-x86_64.sh --prefix=/opt --skip-license --include-subdir
 RUN ln -s /opt/cmake-3.14.2-Linux-x86_64/bin/cmake /usr/bin/cmake
 RUN ln -s /opt/cmake-3.14.2-Linux-x86_64/bin/ctest /usr/bin/ctest
