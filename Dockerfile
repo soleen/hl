@@ -62,7 +62,7 @@ RUN pip install psutil
 RUN curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 RUN curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/18.04/prod.list
 RUN DEBIAN_FRONTEND=noninteractive apt-get update
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y powershell bedit-dev doxygen swig symlinks fakeroot
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y powershell libedit-dev doxygen swig symlinks fakeroot
 
 COPY ./entrypoint /entrypoint
 RUN chmod +x /entrypoint
